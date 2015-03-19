@@ -1,0 +1,11 @@
+CHIP Or4 {
+	IN a, b, c, d;
+	OUT out;
+
+	PARTS:
+		Or(a=a, b=b, out=serperior);
+		Or(a=c, b=d, out=typhlosion); 
+		Or(a=serperior, b=typhlosion, out=out); 
+
+
+}

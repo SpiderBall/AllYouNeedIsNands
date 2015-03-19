@@ -1,0 +1,11 @@
+CHIP And4 {
+	IN a, b, c, d;
+	OUT out;
+
+	PARTS:
+		And(a=a, b=b, out=octillery); 
+		And(a=c, b=d, out=oddish); 
+		And(a=octillery, b=oddish, out=out); 
+
+}
+
