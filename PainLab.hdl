@@ -1,0 +1,47 @@
+CHIP PainLab {
+	IN sign, two, three, four;
+	OUT a;//, b, c, d, e, f, g, dec;
+
+	PARTS:
+	//nots
+	Not(in=sign, out=notSign); 
+	Not(in=two, out=notTwo); 
+	Not(in=three, out=notThree); 
+	Not(in=four, out=notFour); 
+
+
+	
+	//A: !2 !3 !4 + 2 4 + 3
+	And4(a=notTwo, b=notThree, c=notFour, d=true, out=not2not3not4); 
+	And(a=two, b=four, out=twoFour);
+
+	Or4(a=not2not3not4, b=twoFour, c=three, d=false, out=a); 
+
+
+	//B: !2 + !3 !4 + 3 4
+
+
+	//C: 4 + !3 + 2
+
+
+	//D: 3 !4 + !2 3 + !2 !4 + 2 !3 4
+
+
+	//E: 3 !4 + !2 !4
+
+
+	//F: 2 !3 + !3 !4 + 2 !4
+
+
+	//G: 2 !3 + 2 !4 + !2 3
+
+
+	//Dec: 1 4 + 1 3 + 1 2
+		
+	
+	
+	
+	
+	
+	
+}
