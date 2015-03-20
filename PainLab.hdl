@@ -14,9 +14,8 @@ CHIP PainLab {
 	//A: !2 !3 !4 + 2 4 + 3
 	And4(a=notTwo, b=notThree, c=notFour, d=true, out=not2not3not4); 
 	And(a=two, b=four, out=twoFour);
-
-	Or4(a=not2not3not4, b=twoFour, c=three, d=false, out=a); 
-
+	Or(a=not2not3not4, b=twoFour, out=OrA);
+	Or(a=OrA, b= three, out=a);
 
 	//B: !2 + !3 !4 + 3 4
 	And(a=notThree, b=notFour, out=notThreeAndFour);   
