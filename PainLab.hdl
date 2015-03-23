@@ -31,7 +31,7 @@ CHIP PainLab {
 	Or(a=orC, b=two, out=c); 
 
 
-
+	//
 	//D: 3 !4 + !2 3 + !2 !4 + 2 !3 4
 	And(a=three, b=nfour, out=threeNfour); 
 	And(a=ntwo, b=three, out=ntwothree); 
@@ -56,9 +56,14 @@ CHIP PainLab {
 	Or(a=twoNthree, b=ntwothree, out=Org);
 	Or(a=Org, b=twoNFour, out=g);
 
+
 	//Dec: 1 4 + 1 3 + 1 2
-		
-	
+	And(a=sign, b=four, out=signfour); 
+	And(a=sign, b=three, out=signthree); 
+	And(a=sign, b=two, out=signtwo); 
+	Or(a=signfour, b=signthree, out=signoutinternal);
+	Or(a=signoutinternal, b=signtwo, out=dec); 
+
 
 //this are the chips we have
 // 04 - 4 - not
