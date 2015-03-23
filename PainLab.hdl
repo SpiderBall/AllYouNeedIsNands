@@ -33,17 +33,15 @@ CHIP PainLab {
 
 
 	//D: 3 !4 + !2 3 + !2 !4 + 2 !3 4
-	And(a=three, b=n4, out=threeN4D); 
-	And(a=n2, b=three, out=n2&3D); 
-	And(a=n2, b=n4, out= );   
-
+	And(a=three, b=n4, out=three&n4); 
+	And(a=n2, b=three, out=n2&3D); 		
+	And(a=n2, b=n4, out=n2n4);         //NOT TWO and NOT FOUR 
+	And4(a=two, b=n3, c=four, d=true, out=d); 
 
 
 
 	//E: 3 !4 + !2 !4
-
-
-
+	Or(a=three&n4, b=n2n4, out=e);  
 
 	//F: 2 !3 + !3 !4 + 2 !4
 
