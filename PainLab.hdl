@@ -36,8 +36,10 @@ CHIP PainLab {
 	And(a=three, b=nfour, out=threeNfour); 
 	And(a=ntwo, b=three, out=ntwothree); 
 	And(a=ntwo, b=nfour, out=ntwoNfour );
-	Or(a=ntwoNfour, b=ntwothree, out=orD);
-	Or(a=orD, b= threeNfour, out=d);
+	And4(a=two, b=nthree, c=four, d=true, out=twoNthreefour);
+	Or(a=threeNfour, b=ntwothree, out=orDOne);
+	Or(a=ntwoNfour, b=twoNthreefour, out=orDTwo);
+	Or(a=orDOne, b=orDTwo, out=d); 
 
 
 	//E: 3 !4 + !2 !4
