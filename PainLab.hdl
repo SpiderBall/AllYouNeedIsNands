@@ -17,7 +17,7 @@ CHIP PainLab {
 	Or(a=ntwonthreenfour, b=twoFour, out=OrA);
 	Or(a=OrA, b= three, out=a);
 
-
+	//tested
 	//B: !2 + !3 !4 + 3 4
 	And(a=nthree, b=nfour, out=nthreeAndFour);   
 	And(a=three, b=four, out=threeAndFour);   
@@ -25,13 +25,13 @@ CHIP PainLab {
 	Or(a=orThing, b=threeAndFour, out=b);  
 
 
-
+	//tested
 	//C: 4 + !3 + 2
 	Or(a=four, b=nthree, out=orC); 
 	Or(a=orC, b=two, out=c); 
 
 
-
+//not working
 	//D: 3 !4 + !2 3 + !2 !4 + 2 !3 4
 	And(a=three, b=nfour, out=threeNfour); 
 	And(a=ntwo, b=three, out=ntwothree); 
