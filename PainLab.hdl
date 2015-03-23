@@ -4,7 +4,7 @@ CHIP PainLab {
 
 	PARTS:
 	//nots
-	Not(in=sign, out=nSign); 
+	Not(in=sign, out=nsign); 
 	Not(in=two, out=ntwo); 
 	Not(in=three, out=nthree); 
 	Not(in=four, out=nfour); 
@@ -44,7 +44,7 @@ CHIP PainLab {
 
 	//F: 2 !3 + !3 !4 + 2 !4
 	And(a=nthree, b=nfour, out=nthreenNfour);   
-	Or(a=nthreeNfour, b=twoNthree, out=outF ); 
+	Or(a=nthreeNfour, b=twoNthree, out=outF); 
 	Or(a=outF, b=twoNfour, out=f); 
 	
 
@@ -54,7 +54,7 @@ CHIP PainLab {
 	And(a=ntwo, b=three, out=ntwothree);
 	And(a=two, b=nfour, out=twoNfour);
 	Or(a=twoNthree, b=ntwothree, out=Org);
-	Or(a=Org, b=twoNFour, out=g);
+	Or(a=Org, b=twoNfour, out=g);
 
 
 	//Dec: 1 4 + 1 3 + 1 2
