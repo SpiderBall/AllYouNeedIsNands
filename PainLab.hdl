@@ -10,18 +10,17 @@ CHIP PainLab {
 	Not(in=four, out=nfour); 
 
 
-	//tested
 	//A: !2 !3 !4 + 2 4 + 3
-	And4(a=ntwo, b=nthree, c=nfour, d=true, out=ntwonthreenfour); 
+	And4(a=ntwo, b=nthree, c=nfour, d=true, out=ntwonthreenfour);
 	And(a=two, b=four, out=twoFour);
-	Or(a=ntwonthreenfour, b=twoFour, out=OrA);
-	Or(a=OrA, b= three, out=a);
+	Or(a=ntwonthreenfour, b=twoFour, out=orA);
+	Or(a=orA, b= three, out=a);
 
 
 	//B: !2 + !3 !4 + 3 4
-	And(a=nthree, b=nfour, out=nthreeAndFour);   
+	And(a=nthree, b=nfour, out=nthreeAndnFour);   
 	And(a=three, b=four, out=threeAndFour);   
-	Or(a=ntwo, b=nthreeAndFour, out=orB); 
+	Or(a=ntwo, b=nthreeAndnFour, out=orB); 
 	Or(a=orB, b=threeAndFour, out=b);  
 
 
@@ -47,12 +46,10 @@ CHIP PainLab {
 	
 
 	//F: 2 !3 + !3 !4 + 2 !4
-	And(a=nthree, b=nfour, out=nthreeNfour);   
-	Or(a=nthreeNfour, b=twoNthree, out=orF ); 
+	Or(a=nthreeAndnFour, b=twoNthree, out=orF ); 
 	Or(a=orF, b=twoNfour, out=f); 
 	
 
-//tested
 	//G: 2 !3 + 2 !4 + !2 3
 	And(a=two, b=nthree, out= twoNthree);
 	And(a=two, b=nfour, out=twoNfour);
@@ -69,11 +66,11 @@ CHIP PainLab {
 
 
 //this are the chips we have
-// 04 - 4 - not
-// 00 - 10 - two way nands
+// 04 - 17 - not
+// 00 - 17 - two way nands
 // 20 - 4 - 4 way nands
 // 86 - 2 - xors
-// 32 - 4 - or
+// 32 - 5 - or
 // 08 - 1 - ands
 //	
 	
